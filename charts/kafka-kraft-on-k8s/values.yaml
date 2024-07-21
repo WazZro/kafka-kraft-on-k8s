@@ -205,6 +205,16 @@ kafka:
       - get
       - list
       - watch
+  
+  probes:
+    livenessProbe:
+      enabled: true
+      initialDelaySeconds: 15
+      periodSeconds: 10
+    readinessProbe:
+      enabled: true
+      initialDelaySeconds: 15
+      periodSeconds: 10
 
   tolerations: []
     # - effect: NoSchedule

@@ -60,16 +60,20 @@ spec:
             {{- end }}
           {{- range $port := .Values.kafka.ports }}
             {{- if eq $port.name "kafka" }}
+              {{- if $.Values.kafka.probes.livenessProbe.enabled }}
           livenessProbe:
             tcpSocket:
               port: {{ $port.port }}
-            initialDelaySeconds: 15
-            periodSeconds: 10
+            initialDelaySeconds: {{ $.Values.kafka.probes.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ $.Values.kafka.probes.livenessProbe.periodSeconds }}
+              {{- end }}
+            {{- if $.Values.kafka.probes.readinessProbe.enabled }}
           readinessProbe:
             tcpSocket:
               port: {{ $port.port }}
-            initialDelaySeconds: 15
-            periodSeconds: 10
+            initialDelaySeconds: {{ $.Values.kafka.probes.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ $.Values.kafka.probes.readinessProbe.periodSeconds }}
+              {{- end }}
             {{- end }}
           {{- end }}
           resources:

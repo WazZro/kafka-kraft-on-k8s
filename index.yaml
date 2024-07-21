@@ -1,0 +1,18 @@
+apiVersion: v1
+entries:
+  kafka-kraft-on-k8s:
+  - apiVersion: v2
+    appVersion: 3.7.0
+    created: "2024-07-21T14:54:49.622118+02:00"
+    description: A Helm chart for Kubernetes
+    digest: b80f123b7929ae9f21afb7609200c59ab10c776f5d3d8b35e37f68f1a957d85e
+    icon: https://kafka.apache.org/logos/kafka_logo--simple.png
+    maintainers:
+    - name: Stefam Jährling | SVA System Vertrieb Alexander GmbH
+      url: sva.de
+    name: kafka-kraft-on-k8s
+    type: application
+    urls:
+    - https://github.com/WazZro/kafka-kraft-on-k8s/releases/download/1.2.0/kafka-kraft-on-k8s-1.2.0.tgz/kafka-kraft-on-k8s-1.2.0.tgz
+    version: 1.2.0
+generated: "2024-07-21T14:54:49.620381+02:00"

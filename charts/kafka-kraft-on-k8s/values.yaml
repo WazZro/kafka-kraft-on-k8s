@@ -9,7 +9,7 @@ global:
 #
 # See: https://kafka.apache.org/documentation/#kraft
 # --------------------------------------------------------------------------------------------------------------------------------------- #
-
+clusterDomain: cluster.local
 kafka:
   enabled: true
 

@@ -3,9 +3,10 @@
 {{- $totalReplicas := .Values.kafka.configmap.properties.controllerReplicas -}}
 {{- $service := .Values.kafka.configmap.properties.controllerService -}}
 {{- $namespace := .Values.kafka.configmap.properties.namespace -}}
+{{- $clusterDomain := .Values.clusterDomain -}}
 {{- $voters := list -}}
 {{- range $i := until (int $totalReplicas) }}
-  {{- $voter := printf "%d@controller-%d.%s.%s.svc:9093" $i $i $service $namespace -}}
+  {{- $voter := printf "%d@controller-%d.%s.%s.%s:9093" $i $i $service $namespace $clusterDomain -}}
   {{- $voters = append $voters $voter -}}
 {{- end }}
 {{- join "," $voters -}}
@@ -16,9 +17,10 @@
 {{- $totalReplicas := .Values.kafka.configmap.properties.brokerReplicas -}}
 {{- $service := .Values.kafka.configmap.properties.service -}}
 {{- $namespace := .Values.kafka.configmap.properties.namespace -}}
+{{- $clusterDomain := .Values.clusterDomain -}}
 {{- $voters := list -}}
 {{- range $i := until (int $totalReplicas) }}
-  {{- $voter := printf "%d@kafka-%d.%s.%s.svc:9093" $i $i $service $namespace -}}
+  {{- $voter := printf "%d@kafka-%d.%s.%s.%s:9093" $i $i $service $namespace $clusterDomain -}}
   {{- $voters = append $voters $voter -}}
 {{- end }}
 {{- join "," $voters -}}

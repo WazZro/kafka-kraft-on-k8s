@@ -31,6 +31,9 @@ if [[ $ENVS_ENABLED == true ]]; then
             -e "s+^controller.listeners.names=.*+controller.listeners.names=$CONTROLLER_LISTENER_NAMES+" \
             -e "s+^inter.broker.listener.name=.*+inter.broker.listener.name=$INTER_BROKER_LISTENER_NAME+" \
             -e "s+^listener.security.protocol.map=.*+listener.security.protocol.map=$CONTROLLER_LISTENER_SECURITY_PROTOCOL_MAP+" \
+            -e "s+^offsets.topic.replication.factor=.*+offsets.topic.replication.factor=$OFFSETS_TOPIC_REPLICATION_FACTOR+" \
+            -e "s+^transaction.state.log.replication.factor=.*+transaction.state.log.replication.factor=$TRANSACTION_STATE_LOG_REPLICATION_FACTOR+" \
+            -e "s+^min.insync.replicas=.*+min.insync.replicas=$MIN_INSYNC_REPLICAS+" \
             /opt/kafka/config/kraft/broker.properties > /opt/kafka/broker.properties.updated \
             && mv /opt/kafka/broker.properties.updated /opt/kafka/config/kraft/broker.properties
 
@@ -56,6 +59,9 @@ if [[ $ENVS_ENABLED == true ]]; then
             -e "s+^listeners=.*+listeners=$LISTENERS+" \
             -e "s+^advertised.listeners=.*+advertised.listeners=$ADVERTISED_LISTENERS+" \
             -e "s+^log.dirs=.*+log.dirs=$SHARE_DIR/$NODE_ID+" \
+            -e "s+^offsets.topic.replication.factor=.*+offsets.topic.replication.factor=$OFFSETS_TOPIC_REPLICATION_FACTOR+" \
+            -e "s+^transaction.state.log.replication.factor=.*+transaction.state.log.replication.factor=$TRANSACTION_STATE_LOG_REPLICATION_FACTOR+" \
+            -e "s+^min.insync.replicas=.*+min.insync.replicas=$MIN_INSYNC_REPLICAS+" \
             /opt/kafka/config/kraft/server.properties > /opt/kafka/server.properties.updated \
             && mv /opt/kafka/server.properties.updated /opt/kafka/config/kraft/server.properties
 

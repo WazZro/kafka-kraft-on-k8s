@@ -19,6 +19,9 @@ data:
     inter.broker.listener.name={{ .Values.kafka.configmap.properties.interBrokerListenerName }}
     listener.security.protocol.map={{ .Values.kafka.configmap.properties.controllerListenerSecurityProtocolMap }}
     controller.quorum.voters={{ include "kafka.controllerQuorumVoters" . }}
+    offsets.topic.replication.factor={{ .Values.kafka.configmap.properties.offsetsTopicReplicationFactor }}
+    transaction.state.log.replication.factor={{ .Values.kafka.configmap.properties.transactionStateLogReplicationFactor }}
+    min.insync.replicas={{ .Values.kafka.configmap.properties.minInsyncReplicas }}
   {{- else if and (regexMatch "broker" .Values.kafka.configmap.properties.processRoles) (regexMatch "controller" .Values.kafka.configmap.properties.processRoles) }}
   server.properties: |-
     process.roles={{ .Values.kafka.configmap.properties.processRoles }}
@@ -32,6 +35,9 @@ data:
     inter.broker.listener.name={{ .Values.kafka.configmap.properties.interBrokerListenerName }}
     listener.security.protocol.map={{ .Values.kafka.configmap.properties.controllerListenerSecurityProtocolMap }}
     controller.quorum.voters={{ include "kafka.controllerQuorumVotersCombined" . }}
+    offsets.topic.replication.factor={{ .Values.kafka.configmap.properties.offsetsTopicReplicationFactor }}
+    transaction.state.log.replication.factor={{ .Values.kafka.configmap.properties.transactionStateLogReplicationFactor }}
+    min.insync.replicas={{ .Values.kafka.configmap.properties.minInsyncReplicas }}
   {{- end }}
 {{- else }}
 apiVersion: v1

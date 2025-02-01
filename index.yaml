@@ -3,6 +3,20 @@ entries:
   kafka-kraft-on-k8s:
   - apiVersion: v2
     appVersion: 3.7.0
+    created: "2025-02-02T00:33:55.684949+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 883b6bfe19a084fe7ebd167c4e94baec1dd184b1ed0720de5cbcf7343fc46b3f
+    icon: https://kafka.apache.org/logos/kafka_logo--simple.png
+    maintainers:
+    - name: Stefam Jährling | SVA System Vertrieb Alexander GmbH
+      url: sva.de
+    name: kafka-kraft-on-k8s
+    type: application
+    urls:
+    - https://github.com/WazZro/kafka-kraft-on-k8s/releases/download/1.4.0/kafka-kraft-on-k8s-1..0.tgz
+    version: 1.4.0
+  - apiVersion: v2
+    appVersion: 3.7.0
     created: "2024-08-04T15:32:55.882613+02:00"
     description: A Helm chart for Kubernetes
     digest: 2faa84b511cc868a202d47163648b7144b08cabc29b618f392537aaa07944c7b
@@ -15,17 +29,4 @@ entries:
     urls:
     - https://github.com/WazZro/kafka-kraft-on-k8s/releases/download/1.3.0/kafka-kraft-on-k8s-1.3.0.tgz
     version: 1.3.0
-  - apiVersion: v2
-    appVersion: 3.7.0
-    created: "2024-07-21T14:54:49.622118+02:00"
-    description: A Helm chart for Kubernetes
-    digest: b80f123b7929ae9f21afb7609200c59ab10c776f5d3d8b35e37f68f1a957d85e
-    icon: https://kafka.apache.org/logos/kafka_logo--simple.png
-    maintainers:
-    - name: Stefam Jährling | SVA System Vertrieb Alexander GmbH
-      url: sva.de
-    name: kafka-kraft-on-k8s
-    type: application
-    urls:
-    - https://github.com/WazZro/kafka-kraft-on-k8s/releases/download/1.2.0/kafka-kraft-on-k8s-1.2.0.tgz
-generated: "2024-08-04T15:32:55.881251+02:00"
+generated: "2025-02-02T00:33:55.681942+01:00"

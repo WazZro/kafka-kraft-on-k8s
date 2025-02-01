@@ -39,6 +39,9 @@ kafka:
       #
       defaultReplicationFactor: &default-replication-factor 3
       kafkaNumPartitions: &kafka-num-partitions 8
+      offsetsTopicReplicationFactor: &offsets-topic-replication-factor 3
+      transactionStateLogReplicationFactor: &transaction-state-log-replication-factor 3
+      minInsyncReplicas: &min-insync-replicas 2
 
   env:
     DEBUG: false # activates debug mode in the pod which executes a sleeping process for a long time.
@@ -62,6 +65,9 @@ kafka:
     DEFAULT_REPLICATION_FACTOR: *default-replication-factor
     KAFKA_NUM_PARTITIONS: *kafka-num-partitions
     AUTO_CREATE_TOPICS_ENABLE: *auto-create-topics-enable
+    OFFSETS_TOPIC_REPLICATION_FACTOR: *offsets-topic-replication-factor
+    TRANSACTION_STATE_LOG_REPLICATION_FACTOR: *transaction-state-log-replication-factor
+    MIN_INSYNC_REPLICAS: *min-insync-replicas
 
   name: kafka
   namespace: *namespace

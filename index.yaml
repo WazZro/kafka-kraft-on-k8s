@@ -13,7 +13,7 @@ entries:
     name: kafka-kraft-on-k8s
     type: application
     urls:
-    - https://github.com/WazZro/kafka-kraft-on-k8s/releases/download/1.4.0/kafka-kraft-on-k8s-1..0.tgz
+    - https://github.com/WazZro/kafka-kraft-on-k8s/releases/download/1.4.0/kafka-kraft-on-k8s-1.4.0.tgz
     version: 1.4.0
   - apiVersion: v2
     appVersion: 3.7.0
